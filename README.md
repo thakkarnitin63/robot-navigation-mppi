@@ -21,7 +21,6 @@ This project implements autonomous navigation for differential drive robots thro
 - Hybrid obstacle detection (static world knowledge + real-time LiDAR)
 
 
-
 ---
 
 ## Installation
@@ -51,7 +50,7 @@ mkdir -p ~/robot_ws/src
 cd ~/robot_ws/src
 
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/robot-navigation-mppi.git
+git clone https://github.com/thakkarnitin63/robot-navigation-mppi.git
 
 # Build
 cd ~/robot_ws
