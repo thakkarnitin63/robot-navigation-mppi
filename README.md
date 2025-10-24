@@ -20,12 +20,7 @@ This project implements autonomous navigation for differential drive robots thro
 - MPPI stochastic optimal control (1500 samples at 20Hz)
 - Hybrid obstacle detection (static world knowledge + real-time LiDAR)
 
-### Two Controllers
 
-| Controller | Use Case | Speed | Obstacles |
-|:-----------|:---------|:------|:----------|
-| Pure Pursuit | Clean environments | 50 Hz | No |
-| MPPI | Complex environments | 20 Hz | Yes |
 
 ---
 
