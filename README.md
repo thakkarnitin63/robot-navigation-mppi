@@ -9,7 +9,7 @@ A complete ROS2 navigation system for TurtleBot3 with path smoothing, trajectory
 This project implements autonomous navigation for differential drive robots through three core tasks:
 
 1. **Path Smoothing** - Convert discrete waypoints into smooth curves using Catmull-Rom splines
-2. **Trajectory Generation** - Add velocity and timing constraints using trapezoidal profiles  
+2. **Trajectory Generation** - Time-stamped trajectory using trapezoidal profiles  
 3. **Trajectory Tracking** - Follow paths using Pure Pursuit and MPPI controllers
 
 ### Features
@@ -92,9 +92,6 @@ ros2 launch RobotNavigation10x run_mppi.launch.py
 python3 plot_path.py
 ```
 
-**Creates:**
-- `task_1_smoothing.png`
-- `task_2_timestamp_path.png`
 
 ---
 
