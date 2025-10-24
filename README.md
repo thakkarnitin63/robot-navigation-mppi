@@ -54,7 +54,7 @@ git clone https://github.com/thakkarnitin63/robot-navigation-mppi.git
 
 # Build
 cd ~/robot_ws
-colcon build --packages-select RobotNavigation10x
+colcon build
 source install/setup.bash
 
 # Set robot model
