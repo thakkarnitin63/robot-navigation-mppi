@@ -1,0 +1,42 @@
+# ==============================================================================
+# MPPI Controller Configuration
+# Model Predictive Path Integral controller with obstacle avoidance
+# ==============================================================================
+
+mppi_tracker:
+  ros__parameters:
+    
+    # Robot specifications (TurtleBot3 Burger)
+    max_linear_velocity: 0.22    # Maximum forward speed (m/s)
+    max_acceleration: 0.5        # Acceleration limit (m/s²)
+
+    # Path smoothing configuration
+    spline_tension: 0.31         # Catmull-Rom tension (0.0=tight, 0.5=loose)
+    points_per_segment: 3        # Interpolation density between waypoints
+
+    # Trajectory generation
+    num_waypoints: 6             # Number of waypoints for path
+    waypoint_offset: 1.0         # Random variation around ideal path (meters)
+
+    # Control loop timing
+    controller_frequency: 20.0   # Hz (MPPI is computationally intensive)
+
+    # ===========================================================================
+    # MPPI Algorithm Parameters
+    # ===========================================================================
+    
+    # Sampling configuration
+    mppi_num_samples: 1500       # Number of trajectory samples (K)
+    mppi_horizon_steps: 50       # Prediction horizon length (T)
+    mppi_dt: 0.05                # Time step for forward simulation (seconds)
+    
+    # Optimization parameter
+    mppi_lambda: 0.5             # Temperature parameter (lower = smoother)
+    
+    # Cost function weights (tuned for obstacle environment)
+    mppi_weight_tracking: 5.0           # Path following accuracy
+    mppi_weight_static_obstacle: 80.0   # Known obstacle avoidance
+    mppi_weight_lidar_obstacle: 60.0    # Dynamic obstacle avoidance
+    mppi_weight_control: 0.05           # Energy efficiency
+    mppi_weight_smoothness: 0.75        # Motion smoothness
+    mppi_weight_goal: 100.0             # Goal reaching priority

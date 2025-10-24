@@ -1,0 +1,23 @@
+# ==============================================================================
+# Pure Pursuit Trajectory Tracker Configuration
+# Basic path following controller without obstacle avoidance
+# ==============================================================================
+
+trajectory_tracker:
+  ros__parameters:
+
+    # Robot specifications (TurtleBot3 Burger)
+    max_linear_velocity: 0.5     # Maximum forward speed (m/s)
+    max_acceleration: 0.5        # Acceleration limit (m/s²)
+
+    # Path smoothing configuration
+    spline_tension: 0.31         # Catmull-Rom tension (0.0=tight, 0.5=loose)
+    points_per_segment: 3        # Interpolation density between waypoints
+
+    # Trajectory generation
+    num_waypoints: 6             # Number of waypoints for path
+    waypoint_offset: 1.5         # Random variation around ideal path (meters)
+
+    # Pure Pursuit controller
+    lookahead_distance: 0.75     # Distance to target point ahead of robot (meters)
+    controller_frequency: 50.0   # Control loop rate (Hz)
